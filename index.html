@@ -41,7 +41,6 @@
         #pageIdBom,#pageScBom{display:none;gap:12px;flex:1;min-width:0}
         /* 对照表 / VM选型：页面容器（两页同构） */
         #pageCmp,#pageVm{flex:1;min-width:0;gap:12px;max-height:none;overflow: visible;height: auto;}
-        #pageCmp.active,#pageVm.active{display:flex}
         .cmp-content-header,.vm-content-header{flex-shrink:0}
         .sidebar{width:300px;flex-shrink:0}
         .panel{background:white;border-radius:6px;padding:10px;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin-bottom:6px}
@@ -458,8 +457,6 @@
     .vm-table .col-name,.vm-table .col-swname{width:auto;min-width:120px}
     .vm-table .col-code,.vm-table .col-swcode{width:auto;min-width:100px}
     .vm-table .col-modules,.vm-table .col-remark{vertical-align: top;white-space:normal;word-break:break-word;min-width:180px;}
-    .vm-table .cell-expand{cursor:pointer;color:#7c3aed;font-size:10px;margin-top:2px;display:inline-block}
-    .vm-table .cell-full{white-space:pre-wrap;word-break:break-all;font-size:10px;line-height:1.4}
 
     /* ====== 系列总览 ====== */
     #pageIdOverview,#pageScOverview{flex-direction:column;max-height:none;overflow:visible;height:auto}
@@ -693,8 +690,6 @@
         .vm-table .col-remark{width:26%}
         .vm-table .col-name,.vm-table .col-swname{font-size:10px;font-weight:400}
         .vm-table .col-code,.vm-table .col-swcode{font-size:10px;font-weight:400;color:#3b82f6}
-        .vm-table .cell-expand{cursor:pointer;color:#7c3aed;font-size:10px;margin-top:2px;display:inline-block}
-        .vm-table .cell-full{white-space:pre-wrap;word-break:break-all;font-size:10px;line-height:1.4}
         .vm-table .vm-empty{text-align:center;color:#94a3b8;padding:30px}
         .vm-empty{text-align:center;padding:60px 20px;color:#94a3b8;font-size:14px}
             /* ====== 新增：公告浮动按钮 ====== */
@@ -1047,7 +1042,7 @@
         /* ====== 返回顶部按钮 ====== */
         .back-to-top {
             position: fixed;
-            bottom: 120px;
+            bottom: 170px;
             right: 14px;
             width: 44px;
             height: 44px;
@@ -1113,7 +1108,7 @@
         /* ====== 移动端覆盖 ====== */
         @media(max-width:768px) {
             .back-to-top {
-                bottom: 120px;
+                bottom: 170px;
                 right: 14px;
                 width: 44px;
                 height: 44px;
@@ -1182,14 +1177,11 @@
         .pda-table td:first-child{font-weight:600;color:#1e293b;background:#f1f5f9}
 
         /* 产品动态页样式 */
-        .updates-container{display:flex;flex-direction:column;gap:12px;padding:16px;background:white;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);flex:1;min-height:0}
-        .updates-header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
         .updates-filters{display:flex;flex-wrap:wrap;gap:12px}
         .filter-group{display:flex;align-items:center;gap:6px}
         .filter-label{font-size:12px;font-weight:600;color:#64748b}
         .filter-select{padding:6px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:12px;color:#333;background:white;cursor:pointer;min-width:100px}
         .filter-select:focus{outline:none;border-color:#f97316;box-shadow:0 0 0 2px rgba(249,115,22,0.1)}
-        .updates-stats{font-size:12px;color:#64748b;padding:4px 0;border-bottom:1px solid #e2e8f0}
         .updates-list{display:flex;flex-direction:column;gap:8px;overflow-y:auto;flex:1;padding-right:4px}
         .update-item{padding:12px 16px;background:#f8fafc;border-radius:8px;border-left:4px solid #f97316;transition:all 0.2s}
         .update-item:hover{background:#fff7ed;transform:translateX(2px)}
@@ -1233,15 +1225,15 @@
     <!-- ====== /公告配置 ====== -->
         <div class="container">
         <div class="nav-sidebar">
-            <div class="nav-item active" onclick="switchPage('home', event)"><span class="nav-icon">🏠</span>首页</div>
-            <div class="nav-item" onclick="switchPage('bom', event)"><span class="nav-icon">📋</span>ID配单表</div>
-            <div class="nav-item" onclick="switchPage('scbom', event)"><span class="nav-icon">📋</span>SC配单表</div>
-            <div class="nav-item" onclick="switchPage('vm', event)"><span class="nav-icon">🔐</span>VM选型</div>
-            <div class="nav-item" onclick="switchPage('cmp', event)"><span class="nav-icon">📊</span>对照表</div>
-            <div class="nav-item" onclick="switchPage('overview', event)"><span class="nav-icon">📦</span>ID系列表</div>
-            <div class="nav-item" onclick="switchPage('scoverview', event)"><span class="nav-icon">📦</span>SC系列表</div>
-            <div class="nav-item" onclick="switchPage('pda', event)"><span class="nav-icon">📱</span>PDA</div>
-            <div class="nav-item" onclick="switchPage('updates', event)"><span class="nav-icon">📰</span>产品动态</div>
+            <div class="nav-item active" onclick="switchPage('home')"><span class="nav-icon">🏠</span>首页</div>
+            <div class="nav-item" onclick="switchPage('bom')"><span class="nav-icon">📋</span>ID配单表</div>
+            <div class="nav-item" onclick="switchPage('scbom')"><span class="nav-icon">📋</span>SC配单表</div>
+            <div class="nav-item" onclick="switchPage('vm')"><span class="nav-icon">🔐</span>VM选型</div>
+            <div class="nav-item" onclick="switchPage('cmp')"><span class="nav-icon">📊</span>对照表</div>
+            <div class="nav-item" onclick="switchPage('overview')"><span class="nav-icon">📦</span>ID系列表</div>
+            <div class="nav-item" onclick="switchPage('scoverview')"><span class="nav-icon">📦</span>SC系列表</div>
+            <div class="nav-item" onclick="switchPage('pda')"><span class="nav-icon">📱</span>PDA</div>
+            <div class="nav-item" onclick="switchPage('updates')"><span class="nav-icon">📰</span>产品动态</div>
         </div>
         <div id="pageHome">
             <div class="home-section">
@@ -1251,7 +1243,7 @@
                     <span class="home-section-line"></span>
                 </div>
                 <div class="home-grid">
-                    <button class="home-card" onclick="switchPage('bom', event)">
+                    <button class="home-card" onclick="switchPage('bom')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📋</div>
                             <div class="home-card-title">ID配单表</div>
@@ -1262,7 +1254,7 @@
                             <span class="home-card-link">生成配单 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('scbom', event)">
+                    <button class="home-card" onclick="switchPage('scbom')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📋</div>
                             <div class="home-card-title">SC配单表</div>
@@ -1273,7 +1265,7 @@
                             <span class="home-card-link">生成配单 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('vm', event)">
+                    <button class="home-card" onclick="switchPage('vm')">
                         <div class="home-card-top">
                             <div class="home-card-icon">🔐</div>
                             <div class="home-card-title">VM选型</div>
@@ -1284,18 +1276,18 @@
                             <span class="home-card-link">查看选型 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('cmp', event)">
+                    <button class="home-card" onclick="switchPage('cmp')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📊</div>
                             <div class="home-card-title">对照表</div>
                             <div class="home-card-num">04</div>
                         </div>
-                        <div class="home-card-desc">419条基线 ↔ 经销型号物料代码对照，支持快速搜索筛选，涵盖ID/SC产品。</div>
+                        <div class="home-card-desc">基线 ↔ 经销型号物料代码对照，支持快速搜索筛选，涵盖ID/SC产品。</div>
                         <div class="home-card-footer">
                             <span class="home-card-link">查看对照 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('overview', event)">
+                    <button class="home-card" onclick="switchPage('overview')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📦</div>
                             <div class="home-card-title">ID系列表</div>
@@ -1306,7 +1298,7 @@
                             <span class="home-card-link">浏览系列 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('scoverview', event)">
+                    <button class="home-card" onclick="switchPage('scoverview')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📦</div>
                             <div class="home-card-title">SC系列表</div>
@@ -1317,7 +1309,7 @@
                             <span class="home-card-link">浏览系列 →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('pda', event)">
+                    <button class="home-card" onclick="switchPage('pda')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📱</div>
                             <div class="home-card-title">PDA选型</div>
@@ -1328,7 +1320,7 @@
                             <span class="home-card-link">选择PDA →</span>
                         </div>
                     </button>
-                    <button class="home-card" onclick="switchPage('updates', event)">
+                    <button class="home-card" onclick="switchPage('updates')">
                         <div class="home-card-top">
                             <div class="home-card-icon">📰</div>
                             <div class="home-card-title">产品动态</div>
@@ -1483,7 +1475,7 @@
             <div class="cmp-content">
                 <div class="cmp-content-header">
                     <div class="content-title"><div class="content-title-icon">📊</div>ID/SC经销基线对照表</div>
-                    <div class="cmp-notice" style="font-size:12px;font-weight:600;color:#f97316;margin-top:4px;">2026年市场政策调整，仅保留一套命名规则，具体内容见产品动态</div>
+                    <div style="font-size:12px;font-weight:600;color:#f97316;margin-top:4px;">2026年市场政策调整，仅保留一套命名规则，具体内容见产品动态</div>
                     <div class="content-toolbar">
                         <div class="toolbar-right">
                             <span id="cmpStats" class="cmp-stats">共 0 条</span>
@@ -1495,7 +1487,7 @@
         </div>
         <!-- ====== 系列总览 ====== -->
         <div id="pageIdOverview" style="display:none; flex:1; min-width:0;">
-            <div class="series-sidebar" id="idSeriesSidebar">
+            <div class="series-sidebar">
                 <div class="panel">
                     <div class="panel-title"><div class="panel-title-icon">📦</div>ID产品系列</div>
                     <div class="quick-search" style="max-width:360px">
@@ -1524,7 +1516,7 @@
         </div>
         <!-- ====== /系列总览 ====== -->
         <div id="pageScOverview" style="display:none; flex:1; min-width:0;">
-            <div class="series-sidebar" id="scSeriesSidebar">
+            <div class="series-sidebar">
                 <div class="panel">
                     <div class="panel-title"><div class="panel-title-icon">📦</div>SC产品系列</div>
                     <div class="quick-search" style="max-width:360px">
@@ -1560,7 +1552,7 @@
                         PDA智能移动终端选型
                     </div>
                 </div>
-                <div class="pda-filter-bar" id="pdaFilterBar">
+                <div class="pda-filter-bar">
                     <div class="pda-filter-item">
                         <label class="pda-filter-label">系列</label>
                         <select class="pda-filter-select" id="pdaFilterSeries" onchange="pdaApplyFilters()">
@@ -1619,7 +1611,7 @@
                 <div style="padding:8px 12px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;">
                     <span style="font-size:12px;color:#64748b;" id="pdaCount">共 0 款型号</span>
                 </div>
-                <div class="pda-table-scroll" id="pdaTableScroll">
+                <div class="pda-table-scroll">
                     <table class="pda-table" id="pdaTable">
                         <thead id="pdaTableHead"></thead>
                         <tbody id="pdaTableBody"></tbody>
@@ -1670,7 +1662,7 @@
     <div class="version-bar">有任何建议和问题请及时联系蔡修钢 · 网址：<a href="https://cai0707-kiki.github.io/ID-BOM/" target="_blank" style="color:#f97316;text-decoration:none">https://cai0707-kiki.github.io/ID-BOM/</a></div>
     <button id="backToTop" class="back-to-top" title="返回顶部">↑</button>
     <!-- ====== 联系我们浮动按钮 ====== -->
-    <div id="contactFloatBtn" class="contact-float-btn" onclick="showContactModal()" title="联系我们">
+    <div class="contact-float-btn" onclick="showContactModal()" title="联系我们">
         <span class="contact-icon">💬</span>
     </div>
     <!-- ====== 联系我们弹窗 ====== -->
@@ -1717,7 +1709,7 @@
         </div>
     </div>
     <!-- ====== 新增：公告浮动按钮 ====== -->
-    <div id="announceFloatBtn" class="announce-float-btn" onclick="forceShowAnnounce()" title="查看公告">
+    <div class="announce-float-btn" onclick="forceShowAnnounce()" title="查看公告">
         <span>🔔</span>
         <span class="announce-dot" id="announceDot"></span>
     </div>
@@ -1779,17 +1771,7 @@
         '扩展配件': { name: '扩展配件', icon: '📦', col: 23, flagCol: 24, accCol: 7, accFlagCol: 8 }
     };
 
-    var scAccessoryColumns = {
-        '电源':     { name: '电源',     icon: '⚡', col: 7,  flagCol: 8,  accCol: 7, accFlagCol: 8 },
-        '安装板':   { name: '安装板',   icon: '🔧', col: 9,  flagCol: 10, accCol: 7, accFlagCol: 8 },
-        '一体线':   { name: '一体线',   icon: '🔌', col: 11, flagCol: 12, accCol: 7, accFlagCol: 8 },
-        'IO线':     { name: 'IO电源线', icon: '🔗', col: 13, flagCol: 14, accCol: 7, accFlagCol: 8 },
-        '网线':     { name: '网线',     icon: '🌐', col: 15, flagCol: 16, accCol: 7, accFlagCol: 8 },
-        '灯板':     { name: '灯板',     icon: '💡', col: 17, flagCol: 18, accCol: 7, accFlagCol: 8 },
-        '镜头罩':   { name: '镜头罩',   icon: '📷', col: 19, flagCol: 20, accCol: 7, accFlagCol: 8 },
-        '镜头':   { name: '镜头',   icon: '🔭', col: 21, flagCol: 22, accCol: 7, accFlagCol: 8 },
-        '扩展配件': { name: '扩展配件', icon: '📦', col: 23, flagCol: 24, accCol: 7, accFlagCol: 8 }
-    };
+    var scAccessoryColumns = accessoryColumns;
 
     var cableCategories = {
         '一体线': { materials: ['普通', '高柔', '超柔'] },
@@ -1887,7 +1869,6 @@
             if (typeof IDBOM_ACCESSORY_DATA !== 'undefined' && Array.isArray(IDBOM_ACCESSORY_DATA)) {
                 raw = raw.concat(IDBOM_ACCESSORY_DATA);
             }
-            if (raw.length > 0 && raw[0]._version) raw = raw.slice(1);
             var embedded = raw.map(function(i) {
                 var r = i.value || i;
                 return r.map(function(c) {
@@ -1897,7 +1878,6 @@
             if (embedded.length > 0) {
                 idAllRows = embedded;
                 initId();
-                setTimeout(setupImageLazyLoad, 100);
             }
         } catch (e) {
             console.error('Parse error:', e);
@@ -1913,7 +1893,6 @@
             if (typeof SCBOM_ACCESSORY_DATA !== 'undefined' && Array.isArray(SCBOM_ACCESSORY_DATA)) {
                 raw = raw.concat(SCBOM_ACCESSORY_DATA);
             }
-            if (raw.length > 0 && raw[0]._version) raw = raw.slice(1);
             var embedded = raw.map(function(i) {
                 var r = i.value || i;
                 return r.map(function(c) {
@@ -1924,35 +1903,10 @@
                 scAllRows = embedded;
                 initSc();
                 scDataLoaded = true;
-                setTimeout(setupImageLazyLoad, 100);
             }
         } catch (e) {
             console.error('SC Parse error:', e);
         }
-    }
-
-    /* ==================== 图片懒加载（IntersectionObserver） ==================== */
-
-    function setupImageLazyLoad() {
-        if (!('IntersectionObserver' in window)) return;
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var img = entry.target;
-                    var fullSrc = img.getAttribute('data-full');
-                    if (fullSrc && !img.dataset.loaded) {
-                        var preloader = new Image();
-                        preloader.src = fullSrc;
-                        img.dataset.loaded = '1';
-                    }
-                    observer.unobserve(img);
-                }
-            });
-        }, { rootMargin: '200px' });
-
-        document.querySelectorAll('img[data-full]').forEach(function(img) {
-            observer.observe(img);
-        });
     }
 
     /* ==================== 级联选择器初始化 ==================== */
@@ -2404,7 +2358,7 @@
             filtered.push(item);
         });
 
-        var confirmFn = modalSource === 'sc' ? 'confirmScAccessories' : 'confirmAccessories';
+        var confirmFn = 'confirmAccessories';
 
         if (filtered.length === 0) {
             tb.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#94a3b8;padding:30px;">无匹配的配件</td></tr>';
@@ -2601,10 +2555,6 @@
         }
     }
 
-    function confirmScAccessories() {
-        confirmAccessories();
-    }
-
     /* ==================== 生成标配配件 ==================== */
 
     function generateIdStandardAccessories() {
@@ -2775,7 +2725,7 @@
 
     var h = '<table class="data-table">' + tblHead + '<tbody>';
 
-    items.forEach(function(item, idx) {
+    items.forEach(function(item) {
         var actionBtn = '';
         if (item.type === 'host') {
             var specUrl = getSpecUrl(item.name);
@@ -2824,7 +2774,12 @@
                     idSelectedAccessories.push(JSON.parse(JSON.stringify(idStandardCache[removed.key])));
                 }
             } else {
-                idSelectedAccessories.push(JSON.parse(JSON.stringify(idStandardCache[removed.key])));
+                var stillHasOptional = idSelectedAccessories.some(function(a) {
+                    return a.key === removed.key && a.type === 'optional';
+                });
+                if (!stillHasOptional) {
+                    idSelectedAccessories.push(JSON.parse(JSON.stringify(idStandardCache[removed.key])));
+                }
             }
         }
         renderIdTable();
@@ -3253,7 +3208,7 @@
 
         var h = '<table class="data-table">' + tblHead + '<tbody>';
 
-        items.forEach(function(item, idx) {
+        items.forEach(function(item) {
             var actionBtn = '';
             if (item.type === 'host') {
                 var specUrl = getSpecUrl(item.name);
@@ -3544,7 +3499,7 @@
             if (rows[i].getAttribute('data-code') === target.code
                 && rows[i].getAttribute('data-kind') === target.kind) { tr = rows[i]; break; }
         }
-        if (!tr) { wrap.scrollTop = 0; window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+        if (!tr) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
         var rect = tr.getBoundingClientRect();
         var targetY = window.scrollY + rect.top - (window.innerHeight - rect.height) / 2;
         var maxY = document.documentElement.scrollHeight - window.innerHeight;
@@ -3850,8 +3805,6 @@
         if (opts && opts.centerOn) {
             centerOverviewRow(wrap, opts.centerOn);
         } else {
-            // 重置滚动容器到顶部，确保从序号1开始显示
-            wrap.scrollTop = 0;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
@@ -4008,7 +3961,6 @@
         if (opts && opts.centerOn) {
             centerOverviewRow(wrap, opts.centerOn);
         } else {
-            wrap.scrollTop = 0;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
@@ -4053,7 +4005,7 @@
         });
     }
 
-    function switchPage(page, evt) {
+    function switchPage(page) {
     document.querySelectorAll('.nav-item').forEach(function(t) {
         t.classList.remove('active');
     });
@@ -4069,13 +4021,10 @@
     vm.style.display = 'none';
     var cmp = document.getElementById('pageCmp');
     cmp.style.display = 'none';
-    cmp.classList.remove('active');
     var overview = document.getElementById('pageIdOverview');
     overview.style.display = 'none';
-    overview.classList.remove('active');
     var scOverview = document.getElementById('pageScOverview');
     scOverview.style.display = 'none';
-    scOverview.classList.remove('active');
     var pda = document.getElementById('pagePda');
     pda.style.display = 'none';
     var updates = document.getElementById('pageUpdates');
@@ -4093,7 +4042,6 @@
         if (!vmInitialized) initVmPage();
     } else if (page === 'cmp') {
         cmp.style.display = 'flex';
-        cmp.classList.add('active');
         if (cmpData.length === 0) {
             loadCmpData();
             initCmpFilter();
@@ -4101,14 +4049,13 @@
         }
     } else if (page === 'overview') {
         overview.style.display = 'flex';
-        overview.classList.add('active');
         // 如果系列列表还未渲染，则渲染
         if (!document.getElementById('idSeriesList').children.length) {
             renderIdSeriesList();
         }
     } else if (page === 'scoverview') {
         scOverview.style.display = 'flex';
-        scOverview.classList.add('active');
+        if (!scDataLoaded) loadScData();
         if (!document.getElementById('scSeriesList').children.length) {
             renderScSeriesList();
         }
@@ -4250,7 +4197,6 @@
     }
     /* ==================== PDA选型功能 ==================== */
     var pdaInitialized = false;
-    var pdaFilters = {};
     var pdaFilteredModels = [];
     var pdaFilterGetters = {
         series: function(m) { return m.main; },
@@ -4481,7 +4427,7 @@
             var delay = (retryCount + 1) * 2000;
             setTimeout(function() {
                 // 第1次重试原图，第2次再试缩略图
-                if (retryCount === 1) {
+                if (retryCount === 0) {
                     imgElement.src = fullSrc || ('IMG/' + imgName + '.png');
                 } else {
                     var thumbParts = imgName.split('/');
@@ -4634,9 +4580,9 @@ document.addEventListener('DOMContentLoaded', function() {
             function getScrollY() {
                 var y = window.pageYOffset || document.documentElement.scrollTop || 0;
                 var el;
-                el = document.getElementById('cmpTableArea');
+                el = document.getElementById('updatesList');
                 if (el && el.scrollTop > y) y = el.scrollTop;
-                el = document.getElementById('idOverviewTableWrap');
+                el = document.querySelector('.pda-table-scroll');
                 if (el && el.scrollTop > y) y = el.scrollTop;
                 return y;
             }
@@ -4654,9 +4600,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 var el;
-                el = document.getElementById('cmpTableArea');
+                el = document.getElementById('updatesList');
                 if (el) el.scrollTop = 0;
-                el = document.getElementById('idOverviewTableWrap');
+                el = document.querySelector('.pda-table-scroll');
                 if (el) el.scrollTop = 0;
             });
         })();
@@ -4674,15 +4620,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (typeof IDBOM_PRODUCT_UPDATES !== 'undefined') {
             updatesData = IDBOM_PRODUCT_UPDATES;
         }
-
-        // 排序：精选置顶，然后按日期倒序
-        updatesData.sort(function(a, b) {
-            // 精选优先级高于日期
-            if (a.featured === '是' && b.featured !== '是') return -1;
-            if (a.featured !== '是' && b.featured === '是') return 1;
-            // 同为精选或同为非精选，按日期倒序
-            return new Date(b.date) - new Date(a.date);
-        });
 
         renderUpdatesList();
     }
